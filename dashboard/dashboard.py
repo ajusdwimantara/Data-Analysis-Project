@@ -64,7 +64,7 @@ if 'Reviews Impact' in genre:
         - Bad products: review score <= 3
         
 
-        The second way is by separatomg the products based on their average review score:
+        The second way is by separating the products based on their average review score:
         - One-star products: review score between 1.0 to 1.5
         - Two-star products: review score between 1.5 to 2.5
         - Three-star products: review score between 2.5 to 3.5
