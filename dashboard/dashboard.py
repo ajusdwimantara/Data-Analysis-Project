@@ -14,8 +14,6 @@ with st.sidebar:
         label="Data Shown:",
         options=('Reviews Impact', 'Product Detail Impact', 'Geographics')
     )
-    # check
-    st.write("Files in directory:", os.listdir())
 
 # made-up name and description
 st.title('ShopEase')
@@ -77,10 +75,10 @@ if 'Reviews Impact' in genre:
     )
 
     # import data
-    score_per_product = pd.read_csv("score_per_product.csv", skiprows=1)
+    score_per_product = pd.read_csv("dashboard/score_per_product.csv", skiprows=1)
     score_per_product.columns = ["product_id", "order_id", "review_score_min", "review_score_max", "review_score_mean"]
 
-    score_per_store = pd.read_csv("score_per_store.csv", skiprows=1)
+    score_per_store = pd.read_csv("dashboard/score_per_store.csv", skiprows=1)
     score_per_store.columns = ["seller_id", "order_id", "review_score_min", "review_score_max", "review_score_mean"]
 
     # tabs to seperate the good vs bad product and each review score product
@@ -355,10 +353,10 @@ if 'Product Detail Impact' in genre:
     with tab1:
         # ============= Product Detail to Review Score ========== #
         # import data
-        detailed_product_review = pd.read_csv("detailed_product_review.csv", skiprows=1)
+        detailed_product_review = pd.read_csv("dashboard/detailed_product_review.csv", skiprows=1)
         detailed_product_review.columns = ["product_id", "review_score_min", "review_score_max", "review_score_mean"]
 
-        non_detailed_product_review = pd.read_csv("non_detailed_product_review.csv", skiprows=1)
+        non_detailed_product_review = pd.read_csv("dashboard/non_detailed_product_review.csv", skiprows=1)
         non_detailed_product_review.columns = ["product_id", "review_score_min", "review_score_max", "review_score_mean"]
 
         # Create a boxplot with 1 row and 2 columns of subplots
@@ -395,10 +393,10 @@ if 'Product Detail Impact' in genre:
     with tab2:
         # ============= Product Detail to Sales Level ========== #
         # import data
-        detailed_product_sales = pd.read_csv("detailed_product_sales.csv")
+        detailed_product_sales = pd.read_csv("dashboard/detailed_product_sales.csv")
         # detailed_product_sales.columns = ["product_id", "review_score_min", "review_score_max", "review_score_mean"]
 
-        non_detailed_product_sales = pd.read_csv("non_detailed_product_sales.csv")
+        non_detailed_product_sales = pd.read_csv("dashboard/non_detailed_product_sales.csv")
         # non_detailed_product_sales.columns = ["product_id", "review_score_min", "review_score_max", "review_score_mean"]
 
         # Compute mean sales
@@ -445,9 +443,9 @@ if 'Geographics' in genre:
     st.write("This section analyzes geographics data.")
 
     # Import data
-    geolocation_df = pd.read_csv("geolocation_df.csv")
-    customers_geo_count = pd.read_csv("customers_geo_count.csv")
-    sellers_geo_count = pd.read_csv("sellers_geo_count.csv")
+    geolocation_df = pd.read_csv("dashboard/geolocation_df.csv")
+    customers_geo_count = pd.read_csv("dashboard/customers_geo_count.csv")
+    sellers_geo_count = pd.read_csv("dashboard/sellers_geo_count.csv")
 
     # Create tabs for seller and costumer geographics
     tab1, tab2 = st.tabs(["Customers", "Sellers"])
