@@ -5,6 +5,7 @@ import streamlit as st
 import geopandas as gpd
 from shapely.geometry import Point
 import contextily as ctx
+import os
 sns.set(style='dark')
 
 with st.sidebar:
@@ -13,6 +14,8 @@ with st.sidebar:
         label="Data Shown:",
         options=('Reviews Impact', 'Product Detail Impact', 'Geographics')
     )
+    # check
+    st.write("Files in directory:", os.listdir())
 
 # made-up name and description
 st.title('ShopEase')
