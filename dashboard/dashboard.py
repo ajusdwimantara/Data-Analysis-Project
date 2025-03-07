@@ -31,7 +31,7 @@ st.markdown(
 )
 
 # Import data
-order_per_city = pd.read_csv("/dashboard/order_per_city.csv")
+order_per_city = pd.read_csv("dashboard/order_per_city.csv")
 
 colors = ["#72BCD4", "#D3D3D3", "#D3D3D3", "#D3D3D3", "#D3D3D3"]
 
